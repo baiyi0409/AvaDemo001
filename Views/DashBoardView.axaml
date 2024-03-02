@@ -1,0 +1,352 @@
+<UserControl
+    x:Class="AvaDemo001.Views.DashboardView"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:AvaDemo001.ViewModels"
+    d:DesignHeight="690"
+    d:DesignWidth="770"
+    x:DataType="vm:DashboardViewModel"
+    mc:Ignorable="d">
+    <Design.DataContext>
+        <vm:DashboardViewModel />
+    </Design.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.22*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#1b1b1e">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <DockPanel
+                Grid.Row="0"
+                Margin="10,20,10,0"
+                LastChildFill="False">
+                <TextBlock
+                    DockPanel.Dock="Left"
+                    FontSize="24"
+                    Foreground="White"
+                    Text="Overview" />
+                <Button
+                    Content="New deal"
+                    DockPanel.Dock="Right"
+                    Foreground="White" />
+            </DockPanel>
+
+            <DockPanel
+                Grid.Row="1"
+                Margin="10"
+                LastChildFill="False">
+                <TextBox
+                    Width="180"
+                    Height="30"
+                    Background="Transparent"
+                    BorderBrush="#2a2c3e"
+                    CornerRadius="10"
+                    DockPanel.Dock="Left"
+                    Foreground="#59595b"
+                    Text="Search" />
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                    <Button Content="Sort" Foreground="White" />
+                    <Button Content="Filters" Foreground="White" />
+                    <Button Content="Download report" Foreground="White" />
+                </StackPanel>
+            </DockPanel>
+        </Grid>
+
+        <Border Grid.Row="1" Background="#0b0c0c">
+            <ScrollViewer>
+                <Grid Margin="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <!--<UniformGrid Columns="4" Rows="1">
+						<Border
+							Margin="10 0 0 0"
+                            Height="30"
+                            MinWidth="200"
+                            Background="#161619"
+                            CornerRadius="5">
+                            <DockPanel Margin="15,0" LastChildFill="False">
+                                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                                    <Border
+                                        Width="20"
+                                        Height="20"
+                                        Background="White"
+                                        CornerRadius="10">
+                                        <materialIcons:MaterialIcon Kind="RepeatVariant" />
+                                    </Border>
+                                    <TextBlock
+                                        Margin="10,0,0,0"
+                                        VerticalAlignment="Center"
+                                        Foreground="White"
+                                        Text="Pending" />
+                                </StackPanel>
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    DockPanel.Dock="Right"
+                                    Foreground="White"
+                                    Text="$980.00" />
+                            </DockPanel>
+                        </Border>
+                        <Border
+	                        Margin="10 0 5 0"
+                            Height="30"
+                            MinWidth="200"
+                            Background="#161619"
+                            CornerRadius="5">
+                            <DockPanel Margin="15,0" LastChildFill="False">
+                                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                                    <Border
+                                        Width="20"
+                                        Height="20"
+                                        Background="White"
+                                        CornerRadius="10">
+                                        <materialIcons:MaterialIcon Kind="RepeatVariant" />
+                                    </Border>
+                                    <TextBlock
+                                        Margin="10,0,0,0"
+                                        VerticalAlignment="Center"
+                                        Foreground="White"
+                                        Text="Pending" />
+                                </StackPanel>
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    DockPanel.Dock="Right"
+                                    Foreground="White"
+                                    Text="$980.00" />
+                            </DockPanel>
+                        </Border>
+						<Border
+							Margin="5 0 10 0"
+                            Height="30"
+                            MinWidth="200"
+                            Background="#161619"
+                            CornerRadius="5">
+                            <DockPanel Margin="15,0" LastChildFill="False">
+                                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                                    <Border
+                                        Width="20"
+                                        Height="20"
+                                        Background="White"
+                                        CornerRadius="10">
+                                        <materialIcons:MaterialIcon Kind="RepeatVariant" />
+                                    </Border>
+                                    <TextBlock
+                                        Margin="10,0,0,0"
+                                        VerticalAlignment="Center"
+                                        Foreground="White"
+                                        Text="Pending" />
+                                </StackPanel>
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    DockPanel.Dock="Right"
+                                    Foreground="White"
+                                    Text="$980.00" />
+                            </DockPanel>
+                        </Border>
+						<Border
+							Margin="0 0 10 0"
+                            Height="30"
+                            MinWidth="200"
+                            Background="#161619"
+                            CornerRadius="5">
+                            <DockPanel Margin="15,0" LastChildFill="False">
+                                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                                    <Border
+                                        Width="20"
+                                        Height="20"
+                                        Background="White"
+                                        CornerRadius="10">
+                                        <materialIcons:MaterialIcon Kind="RepeatVariant" />
+                                    </Border>
+                                    <TextBlock
+                                        Margin="10,0,0,0"
+                                        VerticalAlignment="Center"
+                                        Foreground="White"
+                                        Text="Pending" />
+                                </StackPanel>
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    DockPanel.Dock="Right"
+                                    Foreground="White"
+                                    Text="$980.00" />
+                            </DockPanel>
+                        </Border>
+                    -->
+                    <!--<ListBox ItemsSource="{Binding ListCards}">
+							<ListBox.Template>
+								<ControlTemplate TargetType="{x:Type ListBox}">
+									<ScrollViewer
+										Padding="{TemplateBinding Padding}"
+										HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+										VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
+										<WrapPanel Orientation="Horizontal">
+											<ItemsPresenter />
+										</WrapPanel>
+									</ScrollViewer>
+								</ControlTemplate>
+							</ListBox.Template>
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<Border Background="#232327" CornerRadius="10">
+										<Grid Margin="10">
+											<Grid.RowDefinitions>
+												<RowDefinition />
+												<RowDefinition />
+												<RowDefinition />
+												<RowDefinition />
+											</Grid.RowDefinitions>
+											<DockPanel Grid.Row="0" LastChildFill="False">
+												<TextBlock
+													DockPanel.Dock="Left"
+													Foreground="#d0d0d0"
+													Text="{Binding Title}" />
+												<Image DockPanel.Dock="Right" />
+											</DockPanel>
+											<DockPanel
+												Grid.Row="1"
+												Margin="0,10,0,0"
+												LastChildFill="False">
+												<TextBlock
+													DockPanel.Dock="Left"
+													FontSize="18"
+													Foreground="#dededf"
+													Text="{Binding Total}" />
+												<TextBlock
+													DockPanel.Dock="Right"
+													Foreground="#878789"
+													Text="{Binding Type}" />
+											</DockPanel>
+											<TextBlock
+												Grid.Row="2"
+												Margin="0,10,0,0"
+												Foreground="#5d5d5f"
+												Text="{Binding Description}" />
+											<DockPanel
+												Grid.Row="3"
+												Margin="0,10,0,0"
+												LastChildFill="False">
+												<StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+													<Image
+														Width="20"
+														Height="20"
+														DockPanel.Dock="Right"
+														Source="{Binding UserAvatar}">
+														<Image.Clip>
+															<EllipseGeometry
+																Center="10 10"
+																RadiusX="10"
+																RadiusY="10" />
+														</Image.Clip>
+													</Image>
+													<TextBlock
+														DockPanel.Dock="Left"
+														Foreground="#878789"
+														Text="{Binding UserName}" />
+												</StackPanel>
+												<TextBlock
+													DockPanel.Dock="Right"
+													Foreground="#878789"
+													Text="{Binding Date}" />
+											</DockPanel>
+										</Grid>
+									</Border>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>-->
+                    <!--
+                    </UniformGrid>-->
+
+                    <ItemsControl Grid.Row="1" ItemsSource="{Binding ListCards}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border
+                                    MinWidth="240"
+                                    Margin="10"
+                                    Background="#232327"
+                                    CornerRadius="10">
+                                    <Grid Margin="15">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <DockPanel Grid.Row="0" LastChildFill="False">
+                                            <TextBlock
+                                                DockPanel.Dock="Left"
+                                                Foreground="#d0d0d0"
+                                                Text="{Binding Title}" />
+                                            <Image DockPanel.Dock="Right" />
+                                        </DockPanel>
+                                        <DockPanel
+                                            Grid.Row="1"
+                                            Margin="0,10,0,0"
+                                            LastChildFill="False">
+                                            <TextBlock
+                                                DockPanel.Dock="Left"
+                                                FontSize="18"
+                                                Foreground="#dededf"
+                                                Text="{Binding Total}" />
+                                            <TextBlock
+                                                DockPanel.Dock="Right"
+                                                Foreground="#878789"
+                                                Text="{Binding Type}" />
+                                        </DockPanel>
+                                        <TextBlock
+                                            Grid.Row="2"
+                                            Margin="0,10,0,0"
+                                            Foreground="#5d5d5f"
+                                            Text="{Binding Description}" />
+                                        <DockPanel
+                                            Grid.Row="3"
+                                            Margin="0,10,0,0"
+                                            LastChildFill="False">
+                                            <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                                                <Image
+                                                    Width="20"
+                                                    Height="20"
+                                                    DockPanel.Dock="Right"
+                                                    Source="{Binding UserAvatar}">
+                                                    <Image.Clip>
+                                                        <EllipseGeometry
+                                                            Center="10 10"
+                                                            RadiusX="10"
+                                                            RadiusY="10" />
+                                                    </Image.Clip>
+                                                </Image>
+                                                <TextBlock
+                                                    Margin="10,0,0,0"
+                                                    DockPanel.Dock="Left"
+                                                    Foreground="#878789"
+                                                    Text="{Binding UserName}" />
+                                            </StackPanel>
+                                            <TextBlock
+                                                DockPanel.Dock="Right"
+                                                Foreground="#878789"
+                                                Text="{Binding Date}" />
+                                        </DockPanel>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</UserControl>

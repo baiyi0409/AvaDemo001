@@ -1,0 +1,107 @@
+<Window
+    x:Class="AvaDemo001.Views.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="using:AvaDemo001.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+    xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+    xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:AvaDemo001.ViewModels"
+    Title="AvaDemo001"
+    Width="1010"
+    Height="690"
+    x:DataType="vm:MainWindowViewModel"
+    ExtendClientAreaChromeHints="NoChrome"
+    ExtendClientAreaTitleBarHeightHint="-1"
+    ExtendClientAreaToDecorationsHint="True"
+    Icon="/Assets/avalonia-logo.ico"
+    TransparencyLevelHint="AcrylicBlur"
+    mc:Ignorable="d">
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+    <Panel>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    MaterialOpacity="0.65"
+                    TintColor="Black"
+                    TintOpacity="1" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <DockPanel
+                Grid.Column="0"
+                LastChildFill="False">
+                <StackPanel Margin="11 20" DockPanel.Dock="Top" Orientation="Horizontal">
+					<materialIcons:MaterialIcon Kind="FaceMan" Width="22" Height="22" />
+                    <TextBlock Text="FinFlow" Margin="10 0 0 0" FontSize="18" />
+                </StackPanel>
+                <ListBox
+                    Name="menuBar"
+                    Background="Transparent"
+                    DockPanel.Dock="Top"
+                    ItemsSource="{Binding MenuBars}">
+                    <i:Interaction.Behaviors>
+                        <ia:EventTriggerBehavior EventName="SelectionChanged">
+                            <ia:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="{Binding #menuBar.SelectedItem}" />
+                        </ia:EventTriggerBehavior>
+                    </i:Interaction.Behaviors>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel  Orientation="Horizontal">
+                                <materialIcons:MaterialIcon Kind="{Binding Icon}" />
+                                <TextBlock
+                                    Margin="10,0,0,0"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding DisplayName}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <StackPanel Margin="10" DockPanel.Dock="Bottom">
+                    <StackPanel Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="/Assets/tx.jpg">
+                            <Image.Clip>
+                                <EllipseGeometry
+                                    Center="15 15"
+                                    RadiusX="15"
+                                    RadiusY="15" />
+                            </Image.Clip>
+                        </Image>
+                        <StackPanel Margin="10,0,0,0" Orientation="Vertical">
+                            <TextBlock Text="Yao" />
+                            <TextBlock Text="Admin" />
+                        </StackPanel>
+                    </StackPanel>
+                    <Button
+                        Margin="0,10,0,0"
+                        HorizontalContentAlignment="Left"
+                        Background="Transparent"
+                        Content="Settings" />
+                    <Button
+                        Name="logOut"
+                        HorizontalContentAlignment="Left"
+                        Background="Transparent"
+                        Click="logOut_Click"
+                        Content="Log Out" />
+                </StackPanel>
+            </DockPanel>
+
+
+            <ContentControl Grid.Column="1" Content="{Binding Content}" />
+        </Grid>
+    </Panel>
+</Window>
