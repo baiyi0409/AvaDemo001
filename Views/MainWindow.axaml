@@ -38,12 +38,19 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <DockPanel
-                Grid.Column="0"
-                LastChildFill="False">
-                <StackPanel Margin="11 20" DockPanel.Dock="Top" Orientation="Horizontal">
-					<materialIcons:MaterialIcon Kind="FaceMan" Width="22" Height="22" />
-                    <TextBlock Text="FinFlow" Margin="10 0 0 0" FontSize="18" />
+            <DockPanel Grid.Column="0" LastChildFill="False">
+                <StackPanel
+                    Margin="11,20"
+                    DockPanel.Dock="Top"
+                    Orientation="Horizontal">
+                    <materialIcons:MaterialIcon
+                        Width="22"
+                        Height="22"
+                        Kind="FaceMan" />
+                    <TextBlock
+                        Margin="10,0,0,0"
+                        FontSize="18"
+                        Text="FinFlow" />
                 </StackPanel>
                 <ListBox
                     Name="menuBar"
@@ -57,7 +64,7 @@
                     </i:Interaction.Behaviors>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel  Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal">
                                 <materialIcons:MaterialIcon Kind="{Binding Icon}" />
                                 <TextBlock
                                     Margin="10,0,0,0"
@@ -89,14 +96,34 @@
                     <Button
                         Margin="0,10,0,0"
                         HorizontalContentAlignment="Left"
-                        Background="Transparent"
-                        Content="Settings" />
+                        Background="Transparent">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <materialIcons:MaterialIcon Kind="Cog" />
+                                <TextBlock
+                                    Margin="10,0,0,0"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Text="Settings" />
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
                     <Button
                         Name="logOut"
                         HorizontalContentAlignment="Left"
                         Background="Transparent"
-                        Click="logOut_Click"
-                        Content="Log Out" />
+                        Click="logOut_Click">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <materialIcons:MaterialIcon Kind="Logout" />
+                                <TextBlock
+                                    Margin="10,0,0,0"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Text="Log Out" />
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
                 </StackPanel>
             </DockPanel>
 

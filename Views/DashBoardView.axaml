@@ -33,7 +33,7 @@
                     Foreground="White"
                     Text="Overview" />
                 <Button
-                    Content="New deal"
+                    Content="+   New deal"
                     DockPanel.Dock="Right"
                     Foreground="White" />
             </DockPanel>
@@ -52,9 +52,36 @@
                     Foreground="#59595b"
                     Text="Search" />
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                    <Button Content="Sort" Foreground="White" />
-                    <Button Content="Filters" Foreground="White" />
-                    <Button Content="Download report" Foreground="White" />
+                    <Button Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <materialIcons:MaterialIcon Kind="FilterVariant" />
+                            <TextBlock
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="Sort" />
+                        </StackPanel>
+                    </Button>
+                    <Button Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <materialIcons:MaterialIcon Kind="FilterOutline" />
+                            <TextBlock
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="Filters" />
+                        </StackPanel>
+                    </Button>
+                    <Button Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <materialIcons:MaterialIcon Kind="CloudDownloadOutline" />
+                            <TextBlock
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="Download report" />
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
             </DockPanel>
         </Grid>

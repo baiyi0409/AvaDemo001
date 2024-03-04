@@ -26,10 +26,12 @@ namespace AvaDemo001.ViewModels
         {
             MenuBars = new ObservableCollection<MenuBar>();
             MenuBars.Add(new MenuBar { DisplayName = "Dashboard", Icon = MaterialIconKind.ViewDashboard, Index = 0 });
-            MenuBars.Add(new MenuBar { DisplayName = "Inbox", Icon = MaterialIconKind.Inbox, Index = 0 });
-            MenuBars.Add(new MenuBar { DisplayName = "Analytics", Icon = MaterialIconKind.ChartArc, Index = 0 });
-            MenuBars.Add(new MenuBar { DisplayName = "Contacts", Icon = MaterialIconKind.AccountMultiple, Index = 0 });
-            MenuBars.Add(new MenuBar { DisplayName = "Projects", Icon = MaterialIconKind.ProjectorScreenVariantOutline, Index = 0 });
+            MenuBars.Add(new MenuBar { DisplayName = "Inbox", Icon = MaterialIconKind.Inbox, Index = 1 });
+            MenuBars.Add(new MenuBar { DisplayName = "Analytics", Icon = MaterialIconKind.ChartArc, Index = 2 });
+            MenuBars.Add(new MenuBar { DisplayName = "Contacts", Icon = MaterialIconKind.AccountMultiple, Index = 3 });
+            MenuBars.Add(new MenuBar { DisplayName = "Projects", Icon = MaterialIconKind.ProjectorScreenVariantOutline, Index = 4 });
+            //对导航菜单进行排序
+            MenuBars = new ObservableCollection<MenuBar>(MenuBars.OrderBy(m => m.Index));
         }
 
         /// <summary>

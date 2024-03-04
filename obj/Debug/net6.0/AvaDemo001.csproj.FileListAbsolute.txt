@@ -141,3 +141,4 @@ D:\Develop\Project\AvaDemo001\AvaDemo001\bin\Debug\net6.0\Avalonia.Xaml.Interact
 D:\Develop\Project\AvaDemo001\AvaDemo001\bin\Debug\net6.0\Avalonia.Xaml.Interactions.Responsive.dll
 D:\Develop\Project\AvaDemo001\AvaDemo001\bin\Debug\net6.0\Avalonia.Xaml.Interactivity.dll
 D:\Develop\Project\AvaDemo001\AvaDemo001\bin\Debug\net6.0\System.Reactive.dll
+D:\Develop\Project\AvaDemo001\AvaDemo001\obj\Debug\net6.0\AvaDemo001.sourcelink.json
